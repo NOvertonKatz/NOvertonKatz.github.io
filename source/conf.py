@@ -14,16 +14,25 @@ author = 'Nate Overton-Katz'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
+extensions = ["sphinx_tags", # tags on pages
+              "myst_parser" # support markdown
+              ]
 
 templates_path = ['_templates']
 exclude_patterns = []
+# default coding language
+highlight_language = 'c++'
 
-
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.txt': 'markdown',
+    '.md': 'markdown',
+}
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 # html_theme = 'sphinx_documatt_theme'
-html_theme = 'alabaster'
+#html_theme = 'alabaster'
+html_theme = 'furo'
 html_static_path = ['_static']

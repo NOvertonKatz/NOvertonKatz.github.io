@@ -10,7 +10,7 @@ I graduated with my Ph.D. in mechanical engineering from Colorado State Universi
 
 You can also find me
 `on LinkedIn <https://www.linkedin.com/in/nate-overton-katz-phd-66278591/>`_
-,and my academic publications
+, and my academic publications
 `on Google Scholar <https://scholar.google.com/citations?hl=en&user=dIQKKpcAAAAJ>`_.
 
 About this site
@@ -20,8 +20,14 @@ In short, this site exists to summarize *things I have learned*, and *projects I
 If you find anything useful here, feel free to reach out, I would love to chat!
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
+   :caption: Stuff:
+
+   blog
+   CV
+   referencesAndTools
+   recommendedReading
+
 
 
 Indices and tables
