@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Nate Overton-Katz site'
-copyright = '2023, Nate Overton-Katz'
+copyright = '2025, Nate Overton-Katz'
 author = 'Nate Overton-Katz'
 #release = '1.0'
 
