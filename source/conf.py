@@ -1,70 +1,77 @@
-# Configuration file for the Sphinx documentation builder.
-#
-# For the full list of built-in configuration values, see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
-
-import os
-import sys
-import ablog
-
-# -- Project information -----------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+### Project information
+project = "Nate Overton-Katz site"
+copyright = "2025, Nate Overton-Katz"
+author = "Nate Overton-Katz"
+html_title = "Nate Overton-Katz site"
 
 
-# The "title" for the blog, used in active pages.  Default is ``'Blog'``.
-blog_title = "Nate Overton-Katz site"
+#file system and favicon:
+html_static_path = ["_static"]
+templates_path = ["_templates"]
+html_css_files = ["css/custom.css"]
+#html_favicon = "_static/images/logo.ico"
 
-# Base URL for the website, required for generating feeds.
-blog_baseurl = "https::/example.com"
-
-
-project = 'Nate Overton-Katz site'
-copyright = '2025, Nate Overton-Katz'
-author = 'Nate Overton-Katz'
-#release = '1.0'
-
-# -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
-
-extensions = ['sphinx.ext.extlinks',
-              'sphinx.ext.intersphinx',
-              'sphinx.ext.todo',
-              'ablog', # blog setup
-              "myst_parser" # support markdown
-              ]
-
-templates_path = ['_templates']
-exclude_patterns = []
-# default coding language
-highlight_language = 'c++'
-
-source_suffix = {
-    '.rst': 'restructuredtext',
-    '.txt': 'markdown',
-    '.md': 'markdown',
+html_sidebars = {
+    "index": ["about.html"],
+    "about": ["about.html"],
+    "projects": ["about.html"],
+    "blog": ["ablog/categories.html", "ablog/tagcloud.html", "ablog/archives.html"],
+    "blog/**": ["ablog/postcard.html", "ablog/recentposts.html", "ablog/archives.html"],
 }
 
-# -- Blog Post Related --------------------------------------------------------
+# load extensions
+extensions = [
+    'sphinx.ext.extlinks',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
+    'ablog', # blog setup
+    "myst_parser" # support markdown
+    ]
 
-#post_date_format = '%%m %%d, %%Y'
-post_auto_excerpt = 1
-# html_sidebars = {'**': ["about.html",
-#                         'ablog/postcard.html', 'navigation.html',
-#                         'ablog/recentposts.html', 'ablog/tagcloud.html',
-#                         'ablog/categories.html',  'ablog/archives.html',
-#                         'searchfield.html']
-#     }
-html_sidebars = {'**': ['ablog/postcard.html',
-                        'ablog/recentposts.html', 'ablog/tagcloud.html',
-                        'ablog/categories.html',  'ablog/archives.html',
-                        ]
-    }
+# specify project details
+master_doc = "index"
 
-# -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
+# basic build settings
+exclude_patterns = [
+    "_build"
+]
 
-# html_theme = 'sphinx_documatt_theme'
-#html_theme = 'alabaster'
-#html_theme = 'furo'
+nitpicky = True
+
+# Add theme
 html_theme = "pydata_sphinx_theme"
-html_static_path = ['_static']
+
+html_theme_options = {
+    "icon_links": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/NOvertonKatz",
+            "icon": "fa-brands fa-github",
+        },
+        {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/nate-overton-katz-phd-66278591",
+            "icon": "fa-brands fa-linkedin",
+        },
+    ],
+}
+
+### MyST
+myst_enable_extensions = [
+    "colon_fence", # ::: syntax
+    "deflist", #Definitiopn lists
+    "html_image", # to add <html> tags with more flexibility
+    "tasklist" #Dynamic lists
+]
+
+### ABlog
+
+blog_title = "Nate Overton-Katz site"
+blog_path = "posts"
+blog_post_pattern = "posts/*/*"
+blog_feed_fulltext = True
+blog_feed_subtitle = "Data Analysis, GIS and career transition advice."
+fontawesome_included = True
+post_redirect_refresh = 1
+post_auto_image = 1
+post_auto_excerpt = 2
