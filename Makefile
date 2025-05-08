@@ -21,4 +21,5 @@ help:
 publish:
 	@make html
 	@cp -a build/html/. docs
+	@touch docs/.nojekyll
 	@git add docs
