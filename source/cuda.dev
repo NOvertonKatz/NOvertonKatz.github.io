@@ -1,0 +1,29 @@
+Check version with
+ubuntu-drivers devices
+sudo ubuntu-drivers autoinstall
+sudo apt install nvidia-driver-525
+
+CHECK nvidia-smi for version support -> you want to install the same cuda toolkit version
+https://developer.nvidia.com/cuda-toolkit-archive
+follow easy system instructions
+
+full docs here
+https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html
+
+post setup add location add to bashrc
+
+# CUDA
+export PATH=/usr/local/cuda-12.2/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64\
+                         ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+full docs here
+https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions
+
+Check
+nvcc --version
+
+Try it out with Cuda samples
+https://github.com/NVIDIA/cuda-samples
+and
+https://github.com/NVIDIA/CUDALibrarySamples

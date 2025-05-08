@@ -5,4 +5,4 @@ You can find me
 , and my academic publications
 `on Google Scholar <https://scholar.google.com/citations?hl=en&user=dIQKKpcAAAAJ>`_. I try to keep both of these up to date.
 
-My resume is availiable :download:`here </resume.pdf>`.
+My resume is available :download:`here </resume.pdf>`.
